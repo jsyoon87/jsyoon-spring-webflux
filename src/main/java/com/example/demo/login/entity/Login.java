@@ -1,9 +1,12 @@
 package com.example.demo.login.entity;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -14,6 +17,10 @@ import org.springframework.data.relational.core.mapping.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Login {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int idx;
 
     @Column(value="username")
     private String username;
